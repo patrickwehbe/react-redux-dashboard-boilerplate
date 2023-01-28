@@ -25,7 +25,11 @@ const SideNavMobile = styled("div")(({ theme }) => ({
 	},
 }));
 
-const Sidenav = ({ children }) => {
+interface SidenavProps {
+	children?: React.ReactNode;
+}
+
+const Sidenav: React.FC<SidenavProps> = ({ children }) => {
 	const { settings, updateSettings } = useSettings();
 
 	const updateSidebarMode = (sidebarSettings) => {
