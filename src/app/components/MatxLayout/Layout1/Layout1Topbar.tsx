@@ -11,6 +11,11 @@ import { themeShadows } from "../../MatxTheme/themeColors";
 import { Icon, MenuItem, Avatar, Hidden } from "@mui/material";
 import { topBarHeight } from "../../../utils/constant";
 
+interface Layout1TopbarProps {
+	fixed?: boolean;
+	className?: string;
+}
+
 const TopbarRoot = styled("div")(({ theme }) => ({
 	top: 0,
 	zIndex: 96,
@@ -60,7 +65,7 @@ const StyledItem = styled(MenuItem)(({ theme }) => ({
 	"& span": { marginRight: "10px", color: theme.palette.text.primary },
 }));
 
-const Layout1Topbar = () => {
+const Layout1Topbar: React.FC<Layout1TopbarProps> = () => {
 	const { logout } = useAuth();
 
 	return (
